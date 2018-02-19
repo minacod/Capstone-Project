@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "843588736223",
+    "firebase_url": "https://tell-me-48931.firebaseio.com",
+    "project_id": "tell-me-48931",
+    "storage_bucket": "tell-me-48931.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843588736223:android:411fc62f52629acd",
+        "android_client_info": {
+          "package_name": "com.example.android.tellme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "843588736223-ruotg6h4mumtb259cvd0o0v207rdssup.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "843588736223-v56gqt4vr6isvms2v8f7ks3tjkqicfee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrLB-azwAHowFf-yJpclsXgoMf2rSHcF4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
