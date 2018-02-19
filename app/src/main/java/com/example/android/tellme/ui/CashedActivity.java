@@ -252,7 +252,8 @@ public class CashedActivity extends AppCompatActivity implements
     @Override
     protected void onPause() {
         super.onPause();
-        mState = mArticlesFragment.getState();
+        if(mArticlesFragment!=null)
+            mState = mArticlesFragment.getState();
     }
 
     private void changeFragment() {

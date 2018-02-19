@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'capstone'
             keyPassword '123456789'
-            storeFile file('C:/Users/shafy/Desktop/Nanodegree/Capstone-Project/keystore.jks')
+            storeFile file("$rootDir/keystore.jks")
             storePassword '123456789'
         }
     }

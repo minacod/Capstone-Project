@@ -73,7 +73,7 @@ public class Source implements Parcelable {
         dest.writeString(mDescription);
         dest.writeString(mUrl);
     }
-    static final Parcelable.Creator<Source> CREATOR
+    static public final Parcelable.Creator<Source> CREATOR
             = new Parcelable.Creator<Source>() {
 
         @Override

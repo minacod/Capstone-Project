@@ -26,15 +26,7 @@ public class Article implements Parcelable{
         this.mDate = mDate;
     }
 
-    public Article(Parcel in) {
-        mSourceName=in.readString();
-        mAuthor=in.readString();
-        mTitle=in.readString();
-        mDescription=in.readString();
-        mImageUrl=in.readString();
-        mUrl=in.readString();
-        mDate=in.readString();
-    }
+
 
     public String getSourceName() {
         return mSourceName;
@@ -92,7 +84,15 @@ public class Article implements Parcelable{
         this.mDate = mDate;
     }
 
-
+    public Article(Parcel in) {
+        mSourceName=in.readString();
+        mAuthor=in.readString();
+        mTitle=in.readString();
+        mDescription=in.readString();
+        mImageUrl=in.readString();
+        mUrl=in.readString();
+        mDate=in.readString();
+    }
     @Override
     public int describeContents() {
         return 0;
@@ -108,7 +108,7 @@ public class Article implements Parcelable{
         dest.writeString(mUrl);
         dest.writeString(mDate);
     }
-    static final Parcelable.Creator<Article> CREATOR
+    static public final Parcelable.Creator<Article> CREATOR
             = new Parcelable.Creator<Article>() {
 
         @Override

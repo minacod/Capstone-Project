@@ -138,9 +138,10 @@ public class SourcesActivity extends AppCompatActivity implements
         return new AsyncTaskLoader<ArrayList<Source>>(this) {
             @Override
             protected void onStartLoading() {
-                mBinding.pbLoading.setVisibility(View.VISIBLE);
-                if(mSources==null)
+                if(mSources==null) {
                     forceLoad();
+                    mBinding.pbLoading.setVisibility(View.VISIBLE);
+                }
                 else
                     deliverResult(mSources);
             }

@@ -69,6 +69,7 @@ public class ArticlesFragment extends Fragment {
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
                 if (!rv.canScrollVertically(1)) {
+                    if(NetworkUtils.isConnected(ArticlesFragment.this.getContext()))
                     ((MainActivity) getActivity()).loadMoreArticle();
                 }
             }
