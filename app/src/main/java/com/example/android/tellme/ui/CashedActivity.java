@@ -141,7 +141,8 @@ public class CashedActivity extends AppCompatActivity implements
     @Override
     protected void onDestroy() {
         FirebaseCrash.log("Cashed onDestroy()");
-        mCursor.close();
+        if(mCursor!=null)
+            mCursor.close();
         super.onDestroy();
     }
 
@@ -222,7 +223,7 @@ public class CashedActivity extends AppCompatActivity implements
 
             @Override
             public Cursor loadInBackground() {
-                Uri uri = ArticlesContentProvider.Articles.ARTICLES;
+                Uri uri = ArticlesContract.ArticlesEntry.CONTENT_URI;
                 return getContentResolver().query(uri, null,
                         null, null, null);
             }
@@ -257,7 +258,7 @@ public class CashedActivity extends AppCompatActivity implements
     }
 
     private void changeFragment() {
-        if(mCursor.getCount()>0) {
+        if(mCursor!=null&&mCursor.getCount()>0) {
             if(mArticlesFragment!=null){
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 mArticlesFragment=new CashedFragment();

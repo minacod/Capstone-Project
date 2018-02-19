@@ -40,7 +40,7 @@ class  ArticlesListRemoteViewsFactory implements RemoteViewsService.RemoteViewsF
 
     @Override
     public void onDataSetChanged() {
-        Uri uri = ArticlesContentProvider.Articles.ARTICLES;
+        Uri uri = ArticlesContract.ArticlesEntry.CONTENT_URI;;
         if(mCursor!=null)mCursor.close();
         mCursor = mContext.getContentResolver().query(uri,null,null,null,null);
     }

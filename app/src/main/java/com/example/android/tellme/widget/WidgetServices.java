@@ -11,6 +11,7 @@ import android.support.annotation.Nullable;
 
 import com.example.android.tellme.R;
 import com.example.android.tellme.data.ArticlesContentProvider;
+import com.example.android.tellme.data.ArticlesContract;
 
 /**
  * Created by shafy on 16/02/2018.
@@ -41,7 +42,7 @@ public class WidgetServices extends IntentService {
     }
 
     private void handleActionUpdateWidget() {
-        Uri uri = ArticlesContentProvider.Articles.ARTICLES;
+        Uri uri = ArticlesContract.ArticlesEntry.CONTENT_URI;;
         Cursor c =getContentResolver().query(uri,null,null,null,null);
         assert c != null;
         boolean bool = (c.getCount()>0);

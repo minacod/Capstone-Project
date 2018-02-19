@@ -1,5 +1,8 @@
 package com.example.android.tellme.data;
 
+import android.net.Uri;
+import android.provider.BaseColumns;
+
 import net.simonvt.schematic.annotation.AutoIncrement;
 import net.simonvt.schematic.annotation.DataType;
 import net.simonvt.schematic.annotation.Database;
@@ -11,31 +14,22 @@ import net.simonvt.schematic.annotation.Table;
  */
 
 public class ArticlesContract {
-    public interface ArticlesEntry{
-        @DataType(DataType.Type.INTEGER)
-        @AutoIncrement
-        @PrimaryKey
-        String ARTICLE_ID = "article_id";
-        @DataType(DataType.Type.TEXT)
-        String ARTICLE_TITLE = "article_title";
-        @DataType(DataType.Type.TEXT)
-        String ARTICLE_AUTHOR= "author";
-        @DataType(DataType.Type.TEXT)
-        String DESCRIPTION = "description";
-        @DataType(DataType.Type.TEXT)
-        String SOURCE_NAME = "source_name";
-        @DataType(DataType.Type.TEXT)
-        String DATE = "date";
-        @DataType(DataType.Type.TEXT)
-        String IMAGE_URL = "image_url";
-        @DataType(DataType.Type.TEXT)
-        String URL = "url";
-    }
-    @Database(version = ArticlesDatabase.VERSION)
-    public final class ArticlesDatabase {
 
-        public static final int VERSION = 1;
+    public static final String AUTHORITY = "com.example.android.tellme";
+    public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + AUTHORITY);
+    public static final String PATH_CASHED="cashed";
 
-        @Table(ArticlesEntry.class) public static final String ARTICLES = "articles";
+
+    public static class ArticlesEntry implements BaseColumns{
+        public static final Uri CONTENT_URI =
+                BASE_CONTENT_URI.buildUpon().appendPath(PATH_CASHED).build();
+        public static final String TABLE_NAME="articles";
+        public static final String ARTICLE_TITLE = "article_title";
+        public static final String ARTICLE_AUTHOR= "author";
+        public static final String DESCRIPTION = "description";
+        public static final String SOURCE_NAME = "source_name";
+        public static final String DATE = "date";
+        public static final String IMAGE_URL = "image_url";
+        public static final String URL = "url";
     }
 }

@@ -25,9 +25,9 @@
         <activity android:name=".ui.SourcesActivity" />
 
         <provider
-            android:name=".data.generated.ArticlesContentProvider"
-            android:authorities="com.example.shafy.tellme"
-            android:exported="true" />
+            android:name=".data.ArticlesContentProvider"
+            android:authorities="com.example.android.tellme"
+            android:exported="false" />
 
         <activity android:name=".ui.CashedActivity" />
 

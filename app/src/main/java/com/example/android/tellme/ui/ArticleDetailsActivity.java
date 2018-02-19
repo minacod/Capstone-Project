@@ -86,7 +86,7 @@ public class ArticleDetailsActivity extends AppCompatActivity {
 
     boolean isSaved(){
         boolean isSaved=false;
-        Uri uri = ArticlesContentProvider.Articles.ARTICLES;
+        Uri uri = ArticlesContract.ArticlesEntry.CONTENT_URI;
         Cursor mCursor = getContentResolver().query(uri, null,
                 ArticlesContract.ArticlesEntry.URL + "=?", new String[]{mData.getUrl()}, null);
         if (mCursor != null) {
@@ -112,7 +112,7 @@ public class ArticleDetailsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id =item.getItemId();
         if (id==R.id.dam_add_to_database) {
-            Uri uri = ArticlesContentProvider.Articles.ARTICLES;
+            Uri uri = ArticlesContract.ArticlesEntry.CONTENT_URI;
             if(!isSaved()){
                 addToDatabase(uri);
                 item.setTitle(getString(R.string.dam_delete));
@@ -120,6 +120,7 @@ public class ArticleDetailsActivity extends AppCompatActivity {
 
             }
             else {
+                uri=uri.buildUpon().appendPath(mData.getUrl()).build();
                 deleteFromDatabase(uri);
                 item.setTitle(getString(R.string.dam_save));
                 item.setIcon(R.drawable.ic_save);
@@ -130,7 +131,7 @@ public class ArticleDetailsActivity extends AppCompatActivity {
     }
 
     private void deleteFromDatabase(Uri uri) {
-        getContentResolver().delete(uri,ArticlesContract.ArticlesEntry.URL+ "=?",new String[]{mData.getUrl()});
+        getContentResolver().delete(uri,ArticlesContract.ArticlesEntry.URL,new String[]{mData.getUrl()});
         WidgetServices.startActionUpdateWidget(this);
     }
     private void addToDatabase(Uri uri) {
