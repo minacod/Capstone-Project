@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group
+        android:id="@+id/nav_nav"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/home"/>
+        <item
+            android:id="@+id/nav_saved"
+            android:icon="@drawable/ic_cashed"
+            android:title="@string/cashed_articles" />
+    </group>
+
+    <group
+        android:id="@+id/categories"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_general"
+            android:icon="@drawable/ic_general"
+            android:title="@string/nav_general" />
+        <item
+            android:id="@+id/nav_business"
+            android:icon="@drawable/ic_business"
+            android:title="@string/nav_business" />
+        <item
+            android:id="@+id/nav_entertainment"
+            android:icon="@drawable/ic_entertainment"
+            android:title="@string/nav_entertainment" />
+        <item
+            android:id="@+id/nav_sports"
+            android:icon="@drawable/ic_sports"
+            android:title="@string/nav_sports" />
+        <item
+            android:id="@+id/nav_technology"
+            android:icon="@drawable/ic_technology"
+            android:title="@string/nav_technology" />
+        <item
+            android:id="@+id/nav_science"
+            android:icon="@drawable/ic_science"
+            android:title="@string/nav_science" />
+        <item
+            android:id="@+id/nav_health"
+            android:icon="@drawable/ic_filled_heart"
+            android:title="@string/nav_health" />
+    </group>
+
+</menu>

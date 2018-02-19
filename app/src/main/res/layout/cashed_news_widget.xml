@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/widget_margin">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/w_lv_item_min_height"
+        android:id="@+id/w_tv_app_name"
+        android:background="@color/w_background"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#ccffffff"
+        android:text="@string/app_name"/>
+    <TextView
+        android:id="@+id/w_tv_nothing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/nothing_to_show"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#ccffffff"
+        android:gravity="center"/>
+    <ListView
+        android:id="@+id/w_lv_articles"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/transparent"
+        android:dividerHeight="@dimen/u_4dp">
+    </ListView>
+
+</LinearLayout>
