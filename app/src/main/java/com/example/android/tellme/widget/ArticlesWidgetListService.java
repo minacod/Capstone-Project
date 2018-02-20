@@ -41,7 +41,8 @@ class  ArticlesListRemoteViewsFactory implements RemoteViewsService.RemoteViewsF
     @Override
     public void onDataSetChanged() {
         Uri uri = ArticlesContract.ArticlesEntry.CONTENT_URI;;
-        if(mCursor!=null)mCursor.close();
+        if(mCursor!=null)
+            mCursor.close();
         mCursor = mContext.getContentResolver().query(uri,null,null,null,null);
     }
 
@@ -67,7 +68,6 @@ class  ArticlesListRemoteViewsFactory implements RemoteViewsService.RemoteViewsF
         int imageIndex =mCursor.getColumnIndex(ArticlesContract.ArticlesEntry.IMAGE_URL);
         int urlIndex =mCursor.getColumnIndex(ArticlesContract.ArticlesEntry.URL);
         int dateIndex =mCursor.getColumnIndex(ArticlesContract.ArticlesEntry.DATE);
-
         mCursor.moveToPosition(i);
         Article article = new Article(mCursor.getString(sNameIndex),
                 mCursor.getString(authorIndex),

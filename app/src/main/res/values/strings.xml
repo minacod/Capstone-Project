@@ -1,13 +1,9 @@
 <resources>
     <string name="app_name">Tell Me</string>
-
-    <string name="api_key">fad0b02bb1f046e9bf2a754eed1e8c9a</string>
     <string name="source">source</string>
     <string name="category">category</string>
     <string name="article">article</string>
-    <string name="title_activity_main2">Main2Activity</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>

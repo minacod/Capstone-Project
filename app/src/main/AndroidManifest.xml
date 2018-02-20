@@ -27,7 +27,7 @@
         <provider
             android:name=".data.ArticlesContentProvider"
             android:authorities="com.example.android.tellme"
-            android:exported="false" />
+            android:exported="true" />
 
         <activity android:name=".ui.CashedActivity" />
 

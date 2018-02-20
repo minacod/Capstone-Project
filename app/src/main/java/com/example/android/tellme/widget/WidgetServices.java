@@ -44,9 +44,11 @@ public class WidgetServices extends IntentService {
     private void handleActionUpdateWidget() {
         Uri uri = ArticlesContract.ArticlesEntry.CONTENT_URI;;
         Cursor c =getContentResolver().query(uri,null,null,null,null);
-        assert c != null;
-        boolean bool = (c.getCount()>0);
-        c.close();
+        boolean bool=false;
+        if(c!=null){
+            bool = (c.getCount()>0);
+            c.close();
+        }
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this);
         int[] appwidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(this,CashedNewsWidget.class));
         CashedNewsWidget.updateWidget(this,appWidgetManager,appwidgetIds,bool);
